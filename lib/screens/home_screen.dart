@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:qr_scan/models/scan_model.dart';
+import 'package:qr_scan/providers/db_provider.dart';
+import 'package:qr_scan/providers/scan_list_provider.dart';
+import 'package:qr_scan/providers/ui_provider.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
 
@@ -13,7 +18,9 @@ class HomeScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.delete_forever),
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<ScanListProvider>(context, listen: false).esborraTots();
+            },
           )
         ],
       ),
@@ -30,17 +37,25 @@ class _HomeScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final uIProvider = Provider.of<UIProvider>(context);
+    final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
     // Canviar per a anar canviant entre pantalles
-    final currentIndex = 1;
+    final currentIndex = uIProvider.selectedMenuOpt;
+
+    DBProvider.db.database;
+    
 
     switch (currentIndex) {
       case 0:
+        scanListProvider.carregaScansPerTipus('geo');
         return MapasScreen();
 
       case 1:
+        scanListProvider.carregaScansPerTipus('http');
         return DireccionsScreen();
 
       default:
+        scanListProvider.carregaScansPerTipus('geo');
         return MapasScreen();
     }
   }
