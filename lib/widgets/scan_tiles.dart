@@ -4,6 +4,18 @@ import 'package:provider/provider.dart';
 import 'package:qr_scan/providers/scan_list_provider.dart';
 import 'package:qr_scan/utils/utils.dart';
 
+/*
+Classe per a mostrar els scans en forma de llista.
+
+Aquesta classe es reutilitza per a mostrar els scans de tipus http i geo.
+Per aixo, li passem el tipus de scan que volem mostrar.
+
+A mes, li afegim la funcio Dismissible per a poder esborrar els scans.
+Un cop esborrat, actualitzam la llista de scans.
+
+Tambe, si fem click en un scan, cridam a la funcio launchURL per a obrir la URL del scan.
+*/
+
 class ScanTiles extends StatelessWidget {
   final String tipus;
   const ScanTiles({Key? key, required this.tipus}) : super(key: key);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_scan/models/scan_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// Funcio per a obrir la URL del scan.
 void launchURL(BuildContext context, ScanModel scanModel) async{
   var _url = scanModel.valor;
   if (scanModel.tipus == 'http'){

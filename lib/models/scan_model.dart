@@ -2,6 +2,11 @@ import 'dart:convert';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart' show LatLng;
 
+
+/*
+Classe utilitzada per mapejar la sortida de la base de dades.
+En cas que sigui geo, disposam d'una funcio per obtenir la latitud i longitud.
+*/
 class ScanModel {
     int? id;
     String? tipus;

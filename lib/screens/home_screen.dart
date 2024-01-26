@@ -7,6 +7,12 @@ import 'package:qr_scan/providers/ui_provider.dart';
 import 'package:qr_scan/screens/screens.dart';
 import 'package:qr_scan/widgets/widgets.dart';
 
+/*
+Pantalla principal de l'aplicacio.
+
+En aquesta disposam de la barra de navegacio, el boto per escanejar i el cos de la pantalla.
+*/
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -32,6 +38,10 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+/*
+Classe per a mostrar el cos de la pantalla
+depenent de la opcio seleccionada a la barra de navegacio.
+*/
 class _HomeScreenBody extends StatelessWidget {
   const _HomeScreenBody({Key? key}) : super(key: key);
 

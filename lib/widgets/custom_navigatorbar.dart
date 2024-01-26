@@ -3,6 +3,10 @@ import 'package:provider/provider.dart';
 import 'package:qr_scan/providers/scan_list_provider.dart';
 import 'package:qr_scan/providers/ui_provider.dart';
 
+/*
+Classe per a mostrar la barra de navegacio personalitzada.
+*/
+
 class CustomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,8 +15,6 @@ class CustomNavigationBar extends StatelessWidget {
     final scanListProvider = Provider.of<ScanListProvider>(context, listen: false);
     scanListProvider.carregaTotalGeo();
     scanListProvider.carregaTotalHttp();
-    
-
 
     return BottomNavigationBar(
       onTap: (int i) => uIProvider.selectedMenuOpt = i,

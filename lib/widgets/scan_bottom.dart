@@ -6,6 +6,16 @@ import 'package:qr_scan/providers/db_provider.dart';
 import 'package:qr_scan/providers/scan_list_provider.dart';
 import 'package:qr_scan/utils/utils.dart';
 
+/*
+Classe per a mostrar el boto de scan.
+
+En aquesta cridam a la llibreria FlutterBarcodeScanner per a escanejar el codi QR.
+
+Un cop escanejat el codi QR, el guardam a la base de dades i actualitzam la llista de scans.
+
+A mes, cridam a la funcio launchURL per a obrir la URL del scan.
+*/
+
 class ScanButton extends StatelessWidget {
   const ScanButton({Key? key}) : super(key: key);
 
@@ -17,7 +27,6 @@ class ScanButton extends StatelessWidget {
         Icons.filter_center_focus,
       ),
       onPressed: () async {
-        print('Botó polsat!');
 
         String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode(
           '#3D8BEF', 
